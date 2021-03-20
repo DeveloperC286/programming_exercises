@@ -1,56 +1,81 @@
-pub fn one_away(from: String, to: String) -> bool {
-    let (size_difference, longer_chars, shorter_chars) = sort_strings(from, to);
-    let mut characters_different = 0;
-
-    //replace
-    if size_difference == 0 {
-        for i in 0..shorter_chars.len() {
-            if longer_chars[i] != shorter_chars[i] {
-                characters_different += 1;
-            }
-        }
-
-        if characters_different <= 1 {
-            return true;
-        }
-    }
-
-    //insert or remove
-    if size_difference == 1 {
-        let mut shorter_index = 0;
-        let mut longer_index = 0;
-
-        while longer_index < longer_chars.len() - 1 {
-            if longer_chars[longer_index] == shorter_chars[shorter_index] {
-                shorter_index += 1;
-            } else {
-                characters_different += 1;
-            }
-
-            longer_index += 1;
-        }
-
-        if characters_different <= 1 {
-            return true;
-        }
-    }
-
-    false
+#[derive(Debug, PartialEq)]
+pub enum Change {
+    INSERT { to_insert: char },
+    REMOVE { to_remove: char },
+    MOVE { to_move: char },
+    REPLACE { to_replace: char },
+    NONE,
+    IMPOSSIBLE,
 }
 
-fn sort_strings(string1: String, string2: String) -> (i32, Vec<char>, Vec<char>) {
-    if string1.chars().count() > string2.chars().count() {
-        return (
-            (string1.chars().count() - string2.chars().count()) as i32,
-            string1.chars().collect(),
-            string2.chars().collect(),
-        );
-    } else {
-        return (
-            (string2.chars().count() - string1.chars().count()) as i32,
-            string2.chars().collect(),
-            string1.chars().collect(),
-        );
+pub fn one_away(current: String, desired: String) -> Change {
+    if current == desired {
+        return Change::NONE;
+    }
+
+    if (current.chars().count() + 1) == desired.chars().count() {
+        if let Some(to_insert) = get_different_character(current, desired) {
+            return Change::INSERT { to_insert };
+        }
+    } else if current.chars().count() == (desired.chars().count() + 1) {
+        if let Some(to_remove) = get_different_character(desired, current) {
+            return Change::REMOVE { to_remove };
+        }
+    } else if current.chars().count() == desired.chars().count() {
+        let mut current_chars: Vec<char> = current.chars().collect();
+        let mut desired_chars: Vec<char> = desired.chars().collect();
+        let mut current_different_chars: Vec<char> = vec![];
+        let mut desired_different_chars: Vec<char> = vec![];
+
+        while !current_chars.is_empty() && !desired_chars.is_empty() {
+            if current_chars.get(0) == desired_chars.get(0) {
+                current_chars.remove(0);
+                desired_chars.remove(0);
+            } else {
+                current_different_chars.push(current_chars.remove(0));
+                desired_different_chars.push(desired_chars.remove(0));
+            }
+        }
+
+        if current_different_chars.len() == 2 {
+            desired_different_chars.reverse();
+
+            if current_different_chars == desired_different_chars {
+                return Change::MOVE {
+                    to_move: *current_different_chars.get(0).unwrap(),
+                };
+            }
+        }
+
+        if current_different_chars.len() == 1 {
+            return Change::REPLACE {
+                to_replace: *current_different_chars.get(0).unwrap(),
+            };
+        }
+    }
+
+    Change::IMPOSSIBLE
+}
+
+fn get_different_character(shorter: String, longer: String) -> Option<char> {
+    let mut shorter_chars: Vec<char> = shorter.chars().collect();
+    let mut longer_chars: Vec<char> = longer.chars().collect();
+    let mut different_chars = vec![];
+
+    while !shorter_chars.is_empty() && !longer_chars.is_empty() {
+        if shorter_chars.get(0) == longer_chars.get(0) {
+            shorter_chars.remove(0);
+            longer_chars.remove(0);
+        } else {
+            different_chars.push(longer_chars.remove(0));
+        }
+    }
+
+    different_chars.extend(longer_chars);
+
+    match different_chars.len() {
+        1 => Some(*different_chars.get(0).unwrap()),
+        _ => None,
     }
 }
 
