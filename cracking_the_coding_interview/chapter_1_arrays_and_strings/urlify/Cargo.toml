@@ -1,0 +1,10 @@
+[package]
+name = "urlify"
+version = "0.1.1"
+authors = ["C <DeveloperC@protonmail.com>"]
+edition = "2018"
+
+[dependencies]
+
+[dev-dependencies]
+rstest = "0.6.4"
