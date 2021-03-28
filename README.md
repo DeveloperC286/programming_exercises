@@ -4,7 +4,7 @@
 
 ## Cracking the Coding Interview
 
-- Chapter 1 Arrays & Strings
++ Chapter 1 Arrays & Strings
     + Check Permutation
         + Rust
     + Is Unique
@@ -26,35 +26,37 @@
 
 ## LeetCode
 
-- 7 Reverse Integer
++ 7 Reverse Integer
     + Rust
-- 20 Valid Parentheses
++ 20 Valid Parentheses
     + Rust
-- 22 Generate Parentheses
++ 22 Generate Parentheses
     + Rust
-- 46 Permutations
++ 46 Permutations
     + Rust
-- 50 Pow(x, n)
++ 50 Pow(x, n)
     + Rust
-- 76 Minimum Window Substring
++ 76 Minimum Window Substring
     + Rust
-- 165 Compare Version Numbers
++ 165 Compare Version Numbers
     + Rust
-- 200 Number of Islands
++ 200 Number of Islands
     + Rust
-- 387 First Unique Character in a String
++ 238 Product of Array Except Self
     + Rust
-- 819 Most Common Word
++ 387 First Unique Character in a String
+    + Rust
++ 819 Most Common Word
     + Rust
 
 ## General
 
-- Factorial
++ Factorial
     + Common Lisp
-- Fibonacci
++ Fibonacci
     + Common Lisp
-- Largest Number
++ Largest Number
     + Common Lisp
     + Rust
-- Sum List
++ Sum List
     + Common Lisp
