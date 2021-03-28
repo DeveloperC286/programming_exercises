@@ -39,6 +39,7 @@ include:
   - local: .gitlab/ci/leetcode/46_permutations/rust.yml
   - local: .gitlab/ci/leetcode/50_pow/rust.yml
   - local: .gitlab/ci/leetcode/76_minimum_window_substring/rust.yml
+  - local: .gitlab/ci/leetcode/139_word_break/rust.yml
   - local: .gitlab/ci/leetcode/165_compare_version_numbers/rust.yml
   - local: .gitlab/ci/leetcode/200_number_of_islands/rust.yml
   - local: .gitlab/ci/leetcode/238_product_of_array_except_self/rust.yml
