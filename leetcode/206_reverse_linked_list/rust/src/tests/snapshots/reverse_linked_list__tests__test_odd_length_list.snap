@@ -1,0 +1,21 @@
+---
+source: src/tests/mod.rs
+expression: actual
+
+---
+Some(
+    ListNode {
+        val: 3,
+        next: Some(
+            ListNode {
+                val: 2,
+                next: Some(
+                    ListNode {
+                        val: 1,
+                        next: None,
+                    },
+                ),
+            },
+        ),
+    },
+)
