@@ -38,6 +38,8 @@
     + Rust
 + 76 Minimum Window Substring
     + Rust
++ 98 Validate Binary Search Tree
+    + Rust
 + 139 Word Break
     + Rust
 + 165 Compare Version Numbers
