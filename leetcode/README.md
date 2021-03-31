@@ -26,5 +26,7 @@
     + Rust
 + 387 First Unique Character in a String
     + Rust
++ 543 Diameter of Binary Tree
+    + Rust
 + 819 Most Common Word
     + Rust

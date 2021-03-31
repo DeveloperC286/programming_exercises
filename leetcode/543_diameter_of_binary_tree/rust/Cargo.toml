@@ -1,0 +1,8 @@
+[package]
+name = "diameter_of_binary_tree"
+version = "0.1.0"
+authors = ["DeveloperC <DeveloperC@protonmail.com>"]
+edition = "2018"
+
+
+[dependencies]
