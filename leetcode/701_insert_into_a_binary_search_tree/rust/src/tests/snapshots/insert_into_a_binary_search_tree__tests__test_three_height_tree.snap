@@ -1,0 +1,70 @@
+---
+source: src/tests/mod.rs
+expression: actual
+
+---
+Some(
+    RefCell {
+        value: TreeNode {
+            val: 40,
+            left: Some(
+                RefCell {
+                    value: TreeNode {
+                        val: 20,
+                        left: Some(
+                            RefCell {
+                                value: TreeNode {
+                                    val: 10,
+                                    left: None,
+                                    right: None,
+                                },
+                            },
+                        ),
+                        right: Some(
+                            RefCell {
+                                value: TreeNode {
+                                    val: 30,
+                                    left: Some(
+                                        RefCell {
+                                            value: TreeNode {
+                                                val: 25,
+                                                left: None,
+                                                right: None,
+                                            },
+                                        },
+                                    ),
+                                    right: None,
+                                },
+                            },
+                        ),
+                    },
+                },
+            ),
+            right: Some(
+                RefCell {
+                    value: TreeNode {
+                        val: 60,
+                        left: Some(
+                            RefCell {
+                                value: TreeNode {
+                                    val: 50,
+                                    left: None,
+                                    right: None,
+                                },
+                            },
+                        ),
+                        right: Some(
+                            RefCell {
+                                value: TreeNode {
+                                    val: 70,
+                                    left: None,
+                                    right: None,
+                                },
+                            },
+                        ),
+                    },
+                },
+            ),
+        },
+    },
+)
