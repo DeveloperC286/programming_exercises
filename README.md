@@ -58,6 +58,8 @@
     + Rust
 + 701 Insert into a Binary Search Tree
     + Rust
++ 700 Search in a Binary Search Tree
+    + Rust
 + 819 Most Common Word
     + Rust
 + 1351 Count Negative Numbers in a Sorted Matrix

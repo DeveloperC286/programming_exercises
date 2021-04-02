@@ -1,0 +1,30 @@
+---
+source: src/tests/mod.rs
+expression: actual
+
+---
+Some(
+    RefCell {
+        value: TreeNode {
+            val: 2,
+            left: Some(
+                RefCell {
+                    value: TreeNode {
+                        val: 3,
+                        left: None,
+                        right: None,
+                    },
+                },
+            ),
+            right: Some(
+                RefCell {
+                    value: TreeNode {
+                        val: 1,
+                        left: None,
+                        right: None,
+                    },
+                },
+            ),
+        },
+    },
+)

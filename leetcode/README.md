@@ -30,6 +30,8 @@
     + Rust
 + 543 Diameter of Binary Tree
     + Rust
++ 700 Search in a Binary Search Tree
+    + Rust
 + 701 Insert into a Binary Search Tree
     + Rust
 + 819 Most Common Word
