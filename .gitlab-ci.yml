@@ -49,4 +49,5 @@ include:
   - local: .gitlab/ci/leetcode/387_first_unique_character_in_a_string/rust.yml
   - local: .gitlab/ci/leetcode/543_diameter_of_binary_tree/rust.yml
   - local: .gitlab/ci/leetcode/819_most_common_word/rust.yml
+  - local: .gitlab/ci/leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust.yml
   - local: .gitlab/ci/sum_list/common_lisp.yml
