@@ -14,6 +14,8 @@
     + Rust
 + 98 Validate Binary Search Tree
     + Rust
++ 104 Maximum Depth of Binary Tree
+    + Rust
 + 111 Minimum Depth of Binary Tree
     + Rust
 + 139 Word Break

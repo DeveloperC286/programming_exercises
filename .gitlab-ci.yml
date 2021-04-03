@@ -40,6 +40,7 @@ include:
   - local: .gitlab/ci/leetcode/50_pow/rust.yml
   - local: .gitlab/ci/leetcode/76_minimum_window_substring/rust.yml
   - local: .gitlab/ci/leetcode/98_validate_binary_search_tree/rust.yml
+  - local: .gitlab/ci/leetcode/104_maximum_depth_of_binary_tree/rust.yml
   - local: .gitlab/ci/leetcode/111_minimum_depth_of_binary_tree/rust.yml
   - local: .gitlab/ci/leetcode/139_word_break/rust.yml
   - local: .gitlab/ci/leetcode/165_compare_version_numbers/rust.yml
