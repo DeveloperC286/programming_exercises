@@ -55,4 +55,5 @@ include:
   - local: .gitlab/ci/leetcode/819_most_common_word/rust.yml
   - local: .gitlab/ci/leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust.yml
   - local: .gitlab/ci/leetcode/1382_balance_a_binary_search_tree/rust.yml
+  - local: .gitlab/ci/leetcode/1431_kids_with_the_greatest_number_of_candies/rust.yml
   - local: .gitlab/ci/sum_list/common_lisp.yml
