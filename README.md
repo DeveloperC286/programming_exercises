@@ -66,6 +66,8 @@
     + Rust
 + 819 Most Common Word
     + Rust
++ 1197 Minimum Knight Moves
+    + Rust
 + 1351 Count Negative Numbers in a Sorted Matrix
     + Rust
 + 1382 Balance a Binary Search Tree
