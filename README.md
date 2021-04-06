@@ -74,6 +74,8 @@
     + Rust
 + 1382 Balance a Binary Search Tree
     + Rust
++ 1429 First Unique Number
+    + Rust
 + 1431 Kids With the Greatest Number of Candies
     + Rust
 

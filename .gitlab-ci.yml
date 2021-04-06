@@ -57,5 +57,6 @@ include:
   - local: .gitlab/ci/leetcode/1299_replace_elements_with_greatest_element_on_right_side/rust.yml
   - local: .gitlab/ci/leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust.yml
   - local: .gitlab/ci/leetcode/1382_balance_a_binary_search_tree/rust.yml
+  - local: .gitlab/ci/leetcode/1429_first_unique_number/rust.yml
   - local: .gitlab/ci/leetcode/1431_kids_with_the_greatest_number_of_candies/rust.yml
   - local: .gitlab/ci/sum_list/common_lisp.yml
