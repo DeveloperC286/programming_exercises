@@ -7,7 +7,7 @@ fn test_empty_vector() {
     let expected: Vec<Vec<i32>> = vec![vec![]];
 
     // When
-    let actual = permute(numbers);
+    let actual = permute_unique(numbers);
 
     // Then
     assert_eq!(actual, expected);
@@ -20,7 +20,7 @@ fn test_single_digit() {
     let expected: Vec<Vec<i32>> = vec![vec![1]];
 
     // When
-    let actual = permute(numbers);
+    let actual = permute_unique(numbers);
 
     // Then
     assert_eq!(actual, expected);
@@ -33,7 +33,7 @@ fn test_two_digits() {
     let expected: Vec<Vec<i32>> = vec![vec![0, 1], vec![1, 0]];
 
     // When
-    let actual = permute(numbers);
+    let actual = permute_unique(numbers);
 
     // Then
     assert_eq!(actual, expected);
@@ -53,7 +53,20 @@ fn test_three_digits() {
     ];
 
     // When
-    let actual = permute(numbers);
+    let actual = permute_unique(numbers);
+
+    // Then
+    assert_eq!(actual, expected);
+}
+
+#[test]
+fn test_duplicate_three_digits() {
+    // Given
+    let numbers = vec![1, 1, 2];
+    let expected: Vec<Vec<i32>> = vec![vec![1, 1, 2], vec![1, 2, 1], vec![2, 1, 1]];
+
+    // When
+    let actual = permute_unique(numbers);
 
     // Then
     assert_eq!(actual, expected);

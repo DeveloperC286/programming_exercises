@@ -37,6 +37,7 @@ include:
   - local: .gitlab/ci/leetcode/20_valid_parentheses/rust.yml
   - local: .gitlab/ci/leetcode/22_generate_parentheses/rust.yml
   - local: .gitlab/ci/leetcode/46_permutations/rust.yml
+  - local: .gitlab/ci/leetcode/47_permutation_ii/rust.yml
   - local: .gitlab/ci/leetcode/50_pow/rust.yml
   - local: .gitlab/ci/leetcode/76_minimum_window_substring/rust.yml
   - local: .gitlab/ci/leetcode/78_subsets/rust.yml

@@ -34,6 +34,8 @@
     + Rust
 + 46 Permutations
     + Rust
++ 47 Permutations II
+    + Rust
 + 50 Pow(x, n)
     + Rust
 + 76 Minimum Window Substring

@@ -1,8 +1,9 @@
-pub fn permute(mut permute: Vec<i32>) -> Vec<Vec<i32>> {
+pub fn permute_unique(mut permute: Vec<i32>) -> Vec<Vec<i32>> {
     let mut permutations = vec![];
     permute_internal(&mut permute, &mut permutations, 0);
 
     permutations.sort();
+    permutations.dedup();
     permutations
 }
 
