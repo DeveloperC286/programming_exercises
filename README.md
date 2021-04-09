@@ -86,6 +86,8 @@
     + Rust
 + 1431 Kids With the Greatest Number of Candies
     + Rust
++ 1478 Allocate Mailboxes
+    + Rust
 
 ## General
 
