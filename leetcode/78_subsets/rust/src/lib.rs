@@ -1,11 +1,13 @@
-pub fn subsets(generating_from: Vec<i32>) -> Vec<Vec<i32>> {
-    let generating_from_len = generating_from.len();
-    let upper_bound = 2usize.pow(generating_from_len as u32);
+use std::collections::HashSet;
 
-    let mut subsets = vec![];
+pub fn subsets(generating_from: Vec<i32>) -> Vec<Vec<i32>> {
+    let desired_length = generating_from.len();
+    let upper_bound = 2usize.pow(desired_length as u32);
+
+    let mut subsets = HashSet::new();
 
     for i in 0..upper_bound {
-        let binary_string = get_padded_binary_string(i, generating_from_len);
+        let binary_string = format!("{:0desired_length$b}", i, desired_length = desired_length);
         let mut set = vec![];
 
         for (index, binary_char) in binary_string.chars().enumerate() {
@@ -15,21 +17,10 @@ pub fn subsets(generating_from: Vec<i32>) -> Vec<Vec<i32>> {
         }
 
         set.sort_unstable();
-        subsets.push(set);
+        subsets.insert(set);
     }
 
-    subsets.sort_unstable();
-    subsets
-}
-
-fn get_padded_binary_string(i: usize, desired_length: usize) -> String {
-    let mut string = format!("{:b}", i);
-
-    while string.len() < desired_length {
-        string = format!("0{}", string);
-    }
-
-    string
+    subsets.into_iter().collect()
 }
 
 #[cfg(test)]
