@@ -36,6 +36,8 @@
     + Rust
 + 238 Product of Array Except Self
     + Rust
++ 289 Game of Life
+    + Rust
 + 387 First Unique Character in a String
     + Rust
 + 543 Diameter of Binary Tree
