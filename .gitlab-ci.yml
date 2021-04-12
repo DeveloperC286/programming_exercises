@@ -57,6 +57,7 @@ include:
   - local: .gitlab/ci/leetcode/700_search_in_a_binary_search_tree/rust.yml
   - local: .gitlab/ci/leetcode/701_insert_into_a_binary_search_tree/rust.yml
   - local: .gitlab/ci/leetcode/819_most_common_word/rust.yml
+  - local: .gitlab/ci/leetcode/1091_shortest_path_in_binary_matrix/rust.yml
   - local: .gitlab/ci/leetcode/1197_minimum_knight_moves/rust.yml
   - local: .gitlab/ci/leetcode/1299_replace_elements_with_greatest_element_on_right_side/rust.yml
   - local: .gitlab/ci/leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust.yml
