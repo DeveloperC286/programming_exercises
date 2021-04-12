@@ -1,0 +1,8 @@
+[package]
+name = "maximum_number_of_non-overlapping_substrings"
+version = "0.1.0"
+authors = ["DeveloperC <DeveloperC@protonmail.com>"]
+edition = "2018"
+
+
+[dependencies]
