@@ -42,6 +42,8 @@
     + Rust
 + 78 Subsets
     + Rust
++ 88 Merge Sorted Array
+    + Rust
 + 90 Subsets II
     + Rust
 + 98 Validate Binary Search Tree
