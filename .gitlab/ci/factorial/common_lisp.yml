@@ -3,9 +3,9 @@ factorial-common-lisp-formatting:
   image: clfoundation/sbcl
   script:
     - cd factorial/common_lisp/
-    - for i in $( du -a . | awk '{print $2}' | grep -i "[.]lisp$" | cut -d '/' -f 2- ); do
-    -   sbcl --noinform --eval '(pprint (read (open "'$i'")))' --eval '(quit)' | awk '{print tolower($0)}' > temp.txt
-    -   cmp $i temp.txt
+    - for i in $( du -a "." | awk '{print $2}' | grep -i "[.]lisp$" | cut -d '/' -f 2- ); do
+    - sbcl --noinform --eval '(pprint (read (open "'$i'")))' --eval '(quit)' | awk '{print tolower($0)}' > "temp.txt"
+    - cmp "$i" "temp.txt" || ( echo "$i needs formatted." && exit 1 )
     - done
   rules:
     - if: $CI_MERGE_REQUEST_ID
