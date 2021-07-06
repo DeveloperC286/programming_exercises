@@ -1,16 +1,8 @@
 #[macro_use]
 extern crate log;
 
-use std::iter::FromIterator;
-
 pub fn one_away(from: String, to: String) -> bool {
     let (size_difference, longer_chars, shorter_chars) = sort_strings(from, to);
-    info!(
-        "size_difference = {}, longer_chars = '{}', shorter_chars = '{}'",
-        size_difference,
-        String::from_iter(longer_chars.iter()),
-        String::from_iter(shorter_chars.iter())
-    );
     let mut characters_different = 0;
 
     //replace
@@ -39,11 +31,11 @@ pub fn one_away(from: String, to: String) -> bool {
         while longer_index < longer_chars.len() - 1 {
             if longer_chars[longer_index] == shorter_chars[shorter_index] {
                 shorter_index += 1;
-                longer_index += 1;
             } else {
                 characters_different += 1;
-                longer_index += 1;
             }
+
+            longer_index += 1;
         }
 
         info!("characters_different = {}", characters_different);
