@@ -79,7 +79,7 @@ fn contains_any_order(
     }
 
     for (searching_key, searching_value) in searching_char_counts {
-        let searching_for_value = searching_for_char_counts.get(&searching_key).unwrap();
+        let searching_for_value = searching_for_char_counts.get(searching_key).unwrap();
 
         if searching_value < searching_for_value {
             return false;

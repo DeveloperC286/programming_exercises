@@ -18,7 +18,7 @@ pub fn word_break(breaking: String, mut words: Vec<String>) -> bool {
                 if break_till <= breaking.len()
                     && breaking[break_from..].starts_with(word)
                     && (break_till == breaking.len()
-                        || process(&breaking, &words, break_till, already_processed))
+                        || process(breaking, words, break_till, already_processed))
                 {
                     return true;
                 }
