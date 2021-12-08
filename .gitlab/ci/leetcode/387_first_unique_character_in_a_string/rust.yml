@@ -5,7 +5,7 @@
     - rustup component add rustfmt
   script:
     - cd leetcode/387_first_unique_character_in_a_string/rust
-    - cargo fmt --all -- --check
+    - cargo fmt --all -- --check --config=group_imports=StdExternalCrate
   rules:
     - if: $CI_MERGE_REQUEST_ID
 

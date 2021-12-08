@@ -5,7 +5,7 @@ one_away-formatting:
     - rustup component add rustfmt
   script:
     - cd cracking_the_coding_interview/chapter_1_arrays_and_strings/one_away
-    - cargo fmt --all -- --check
+    - cargo fmt --all -- --check --config=group_imports=StdExternalCrate
   rules:
     - if: $CI_MERGE_REQUEST_ID
 
