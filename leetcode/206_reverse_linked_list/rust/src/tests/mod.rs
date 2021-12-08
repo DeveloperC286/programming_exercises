@@ -1,5 +1,6 @@
-use super::*;
 use insta::assert_debug_snapshot;
+
+use super::*;
 
 #[test]
 fn test_empty_list() {

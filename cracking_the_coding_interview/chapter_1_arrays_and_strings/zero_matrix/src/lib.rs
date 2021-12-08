@@ -1,7 +1,7 @@
 extern crate nalgebra;
-use nalgebra::DMatrix;
-
 use std::collections::HashSet;
+
+use nalgebra::DMatrix;
 
 pub fn zero_matrix(matrix: DMatrix<i32>) -> DMatrix<i32> {
     let mut modifying_matrix: Vec<i32> = matrix.iter().copied().collect();

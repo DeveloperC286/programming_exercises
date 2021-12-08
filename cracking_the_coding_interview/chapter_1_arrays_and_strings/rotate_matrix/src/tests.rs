@@ -1,7 +1,8 @@
 extern crate nalgebra;
-use super::*;
 use nalgebra::DMatrix;
 use rstest::rstest;
+
+use super::*;
 
 #[rstest(
     expected,

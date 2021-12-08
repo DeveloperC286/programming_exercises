@@ -1,7 +1,8 @@
-use super::*;
+use std::sync::Once;
+
 use rstest::rstest;
 
-use std::sync::Once;
+use super::*;
 
 static INIT: Once = Once::new();
 
