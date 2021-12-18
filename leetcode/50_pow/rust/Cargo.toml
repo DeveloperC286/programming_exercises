@@ -9,4 +9,5 @@ edition = "2021"
 
 
 [dev-dependencies]
+# For asserting float points are approximately equal.
 assert_approx_eq = "1.1.0"
