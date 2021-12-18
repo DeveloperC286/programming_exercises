@@ -6,10 +6,16 @@ edition = "2021"
 
 
 [dependencies]
-log = "0.4.14"
 
 
 [dev-dependencies]
-pretty_env_logger = "0.4.0"
-rstest = "0.6.4"
+# For parameterized testing.
+rstest = "0.12.0"
+
+# For property-based testing.
 proptest = "1.0.0"
+
+
+[profile.release]
+lto = 'fat'
+codegen-units = 1
