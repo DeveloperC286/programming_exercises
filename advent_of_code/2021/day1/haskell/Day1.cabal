@@ -1,0 +1,25 @@
+cabal-version:      2.4
+name:               Day1
+version:            0.1.0
+
+
+executable Day1Bin
+    main-is:          Main.hs
+    hs-source-dirs:   src
+    default-language: Haskell2010
+    other-modules: Day1
+    build-depends:    base
+
+
+library Day1Lib
+    exposed-modules:  Day1
+    hs-source-dirs: src
+    build-depends:    base
+
+
+test-suite Day1Tests
+    main-is               : Tests.hs
+    hs-source-dirs        : tests
+    default-language      : Haskell2010
+    type                  : exitcode-stdio-1.0
+    build-depends         : base, HUnit, Day1Lib

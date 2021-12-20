@@ -1,0 +1,22 @@
+day1-haskell-compiling:
+  stage: compiling
+  image: haskell
+  script:
+    - cd advent_of_code/2021/day1/haskell/
+    - cabal update
+    - cabal build
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_BRANCH == "master"
+
+
+day1-haskell-unit-testing:
+  stage: unit-testing
+  image: haskell
+  script:
+    - cd advent_of_code/2021/day1/haskell/
+    - cabal update
+    - cabal test
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_BRANCH == "master"
