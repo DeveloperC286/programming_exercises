@@ -7,6 +7,8 @@
 + 2021
     + Day 1
 	    + Haskell
+    + Day 2
+	    + Haskell
 
 ## Cracking the Coding Interview
 
