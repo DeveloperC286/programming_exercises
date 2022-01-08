@@ -1,3 +1,16 @@
+day1-haskell-formatting:
+  stage: formatting
+  image: haskell
+  before_script:
+    - cabal update
+    - cabal install ormolu
+  script:
+    - cd advent_of_code/2021/day1/haskell/
+    - ormolu -m check src/*.hs tests/*.hs
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+
 day1-haskell-compiling:
   stage: compiling
   image: haskell
