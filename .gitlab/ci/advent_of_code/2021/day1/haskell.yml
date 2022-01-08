@@ -1,6 +1,6 @@
 day1-haskell-formatting:
   stage: formatting
-  image: haskell
+  image: haskell:8
   before_script:
     - cabal update
     - cabal install ormolu
@@ -11,9 +11,22 @@ day1-haskell-formatting:
     - if: $CI_MERGE_REQUEST_ID
 
 
+day1-haskell-linting:
+  stage: linting
+  image: haskell:8
+  before_script:
+    - cabal update
+    - cabal install hlint
+  script:
+    - cd advent_of_code/2021/day1/haskell/
+    - hlint src/*.hs tests/*.hs
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+
 day1-haskell-compiling:
   stage: compiling
-  image: haskell
+  image: haskell:8
   script:
     - cd advent_of_code/2021/day1/haskell/
     - cabal update
@@ -25,7 +38,7 @@ day1-haskell-compiling:
 
 day1-haskell-unit-testing:
   stage: unit-testing
-  image: haskell
+  image: haskell:8
   script:
     - cd advent_of_code/2021/day1/haskell/
     - cabal update

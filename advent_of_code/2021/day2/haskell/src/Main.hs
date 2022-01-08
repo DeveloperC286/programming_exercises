@@ -9,8 +9,8 @@ main = do
   let commands :: [(Direction, Int)]
       commands = [(command, int) | line <- lines file_contents, let s = span (/= ' ') line, let command = read $ fst s, let int = read $ snd s]
 
-      part_1_answer = calculate_position commands
-      part_2_answer = calculate_position_with_aim commands
+      part_1_answer = calculatePosition commands
+      part_2_answer = calculatePositionWithAim commands
 
-  putStrLn $ show part_1_answer
-  putStrLn $ show part_2_answer
+  print part_1_answer
+  print part_2_answer

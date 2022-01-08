@@ -18,27 +18,27 @@ instance Read Direction where
     | s == show Up = [(Up, "")]
     | otherwise = []
 
-calculate_position :: [(Direction, Int)] -> Int
-calculate_position [] = 0
-calculate_position commands = horizontal * abs (up - down)
+calculatePosition :: [(Direction, Int)] -> Int
+calculatePosition [] = 0
+calculatePosition commands = horizontal * abs (up - down)
   where
-    horizontal = sum $ map (snd) $ filter ((== Forward) . fst) commands
-    down = sum $ map (snd) $ filter ((== Down) . fst) commands
-    up = sum $ map (snd) $ filter ((== Up) . fst) commands
+    horizontal = sum $ map snd $ filter ((== Forward) . fst) commands
+    down = sum $ map snd $ filter ((== Down) . fst) commands
+    up = sum $ map snd $ filter ((== Up) . fst) commands
 
-calculate_position_with_aim :: [(Direction, Int)] -> Int
-calculate_position_with_aim [] = 0
-calculate_position_with_aim commands = horizontal * abs (depth)
+calculatePositionWithAim :: [(Direction, Int)] -> Int
+calculatePositionWithAim [] = 0
+calculatePositionWithAim commands = horizontal * abs depth
   where
-    horizontal = sum $ map (snd) $ filter ((== Forward) . fst) commands
-    depth = sum $ map (\(aim, (command, value)) -> aim * value) $ filter (\(_, (command, _)) -> command == Forward) (zip (calculate_aim commands) commands)
+    horizontal = sum $ map snd $ filter ((== Forward) . fst) commands
+    depth = sum $ map (\(aim, (command, value)) -> aim * value) $ filter (\(_, (command, _)) -> command == Forward) (zip (calculateAim commands) commands)
 
-calculate_aim :: [(Direction, Int)] -> [Int]
-calculate_aim [] = []
-calculate_aim commands = map (snd) $ scanl (\(discard, aim) (command, aim_delta) -> (command, apply_to_aim (aim, (command, aim_delta)))) (Up, 0) commands
+calculateAim :: [(Direction, Int)] -> [Int]
+calculateAim [] = []
+calculateAim commands = map snd $ scanl (\(discard, aim) (command, aim_delta) -> (command, applyToAim (aim, (command, aim_delta)))) (Up, 0) commands
 
-apply_to_aim :: (Int, (Direction, Int)) -> Int
-apply_to_aim (aim, (command, aim_delta))
+applyToAim :: (Int, (Direction, Int)) -> Int
+applyToAim (aim, (command, aim_delta))
   | command == Up = aim - aim_delta
   | command == Down = aim + aim_delta
   | otherwise = aim

@@ -9,8 +9,8 @@ main = do
   let depths :: [Int]
       depths = map read $ lines file_contents
 
-      part_1_answer = increased_depths depths
-      part_2_answer = increased_depths (three_sliding_window_sum depths)
+      part_1_answer = increasedDepths depths
+      part_2_answer = increasedDepths (threeSlidingWindowSum depths)
 
-  putStrLn $ show part_1_answer
-  putStrLn $ show part_2_answer
+  print part_1_answer
+  print part_2_answer
