@@ -34,6 +34,7 @@ conventional-commits-linting:
 include:
   - local: .gitlab/ci/advent_of_code/2021/day1/haskell.yml
   - local: .gitlab/ci/advent_of_code/2021/day2/haskell.yml
+  - local: .gitlab/ci/advent_of_code/2021/day3/haskell.yml
   - local: .gitlab/ci/cracking_the_coding_interview/chapter_1_arrays_and_strings/check_permutation/rust.yml
   - local: .gitlab/ci/cracking_the_coding_interview/chapter_1_arrays_and_strings/is_unique/rust.yml
   - local: .gitlab/ci/cracking_the_coding_interview/chapter_1_arrays_and_strings/one_away/rust.yml

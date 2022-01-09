@@ -1,0 +1,48 @@
+day3-haskell-formatting:
+  stage: formatting
+  image: haskell:8
+  before_script:
+    - cabal update
+    - cabal install ormolu
+  script:
+    - cd advent_of_code/2021/day3/haskell/
+    - ormolu -m check src/*.hs tests/*.hs
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+
+day3-haskell-linting:
+  stage: linting
+  image: haskell:8
+  before_script:
+    - cabal update
+    - cabal install hlint
+  script:
+    - cd advent_of_code/2021/day3/haskell/
+    - hlint src/*.hs tests/*.hs
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+
+
+day3-haskell-compiling:
+  stage: compiling
+  image: haskell:8
+  script:
+    - cd advent_of_code/2021/day3/haskell/
+    - cabal update
+    - cabal build
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_BRANCH == "master"
+
+
+day3-haskell-unit-testing:
+  stage: unit-testing
+  image: haskell:8
+  script:
+    - cd advent_of_code/2021/day3/haskell/
+    - cabal update
+    - cabal test
+  rules:
+    - if: $CI_MERGE_REQUEST_ID
+    - if: $CI_COMMIT_BRANCH == "master"
