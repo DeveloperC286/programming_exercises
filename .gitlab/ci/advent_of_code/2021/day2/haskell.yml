@@ -33,7 +33,7 @@ day2-haskell-compiling:
     - cabal build
   rules:
     - if: $CI_MERGE_REQUEST_ID
-    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
 
 
 day2-haskell-unit-testing:
@@ -45,4 +45,4 @@ day2-haskell-unit-testing:
     - cabal test
   rules:
     - if: $CI_MERGE_REQUEST_ID
-    - if: $CI_COMMIT_BRANCH == "master"
+    - if: $CI_COMMIT_BRANCH == $CI_DEFAULT_BRANCH
