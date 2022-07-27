@@ -1,7 +1,7 @@
 pub fn merge(
     merge_into: &mut Vec<i32>,
     merge_into_len: i32,
-    to_merge: &mut Vec<i32>,
+    to_merge: &mut [i32],
     to_merge_len: i32,
 ) {
     let merge_into_len: usize = merge_into_len as usize;
