@@ -1,0 +1,8 @@
+[package]
+name = "remove_duplicates_from_sorted_array"
+version = "0.1.0"
+authors = ["DeveloperC <DeveloperC@protonmail.com>"]
+edition = "2021"
+
+
+[dependencies]
