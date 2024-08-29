@@ -1,0 +1,103 @@
+VERSION 0.7
+
+
+COPY_CI_DATA:
+    COMMAND
+    COPY --dir "ci/" "./"
+
+
+COPY_SOURCECODE:
+    COMMAND
+    DO +COPY_CI_DATA
+    COPY --dir "Day1.cabal" "src/" "tests/" "./"
+
+
+haskell-base:
+    FROM haskell:8.10.7
+    RUN cabal update
+
+
+haskell-formatting-base:
+    FROM +haskell-base
+    RUN cabal install ormolu
+    DO +COPY_SOURCECODE
+
+
+check-haskell-formatting:
+    FROM +haskell-formatting-base
+    RUN ./ci/check-haskell-formatting.sh
+
+
+golang-base:
+    FROM golang:1.22.1
+
+
+shell-formatting-base:
+    FROM +golang-base
+    RUN go install mvdan.cc/sh/v3/cmd/shfmt@v3.7.0
+    DO +COPY_CI_DATA
+
+
+check-shell-formatting:
+    FROM +shell-formatting-base
+    RUN ./ci/check-shell-formatting.sh
+
+
+check-formatting:
+    BUILD +check-haskell-formatting
+    BUILD +check-shell-formatting
+
+
+fix-haskell-formatting:
+    FROM +haskell-formatting-base
+    RUN ./ci/fix-haskell-formatting.sh
+    SAVE ARTIFACT "src/" AS LOCAL "./"
+    SAVE ARTIFACT "tests/" AS LOCAL "./"
+
+
+fix-shell-formatting:
+    FROM +shell-formatting-base
+    RUN ./ci/fix-shell-formatting.sh
+    SAVE ARTIFACT "ci/" AS LOCAL "./"
+
+
+fix-formatting:
+    BUILD +fix-haskell-formatting
+    BUILD +fix-shell-formatting
+
+
+check-haskell-linting:
+    FROM +haskell-base
+    RUN cabal install hlint
+    DO +COPY_SOURCECODE
+    RUN ./ci/check-haskell-linting.sh
+
+
+ubuntu-base:
+    FROM ubuntu:22.04
+    # https://askubuntu.com/questions/462690/what-does-apt-get-fix-missing-do-and-when-is-it-useful
+    RUN apt-get update --fix-missing
+
+
+check-shell-linting:
+    FROM +ubuntu-base
+    RUN apt-get install shellcheck -y
+    DO +COPY_CI_DATA
+    RUN ./ci/check-shell-linting.sh
+
+
+check-linting:
+    BUILD +check-haskell-linting
+    BUILD +check-shell-linting
+
+
+compile:
+    FROM +haskell-base
+    DO +COPY_SOURCECODE
+    RUN ./ci/compile.sh
+
+
+unit-test:
+    FROM +haskell-base
+    DO +COPY_SOURCECODE
+    RUN ./ci/unit-test.sh
