@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directory: [factorial/common_lisp, fibonacci/common_lisp, largest_number/common_lisp, sum_list/common_lisp]
+        directory: [general/factorial/common_lisp, general/fibonacci/common_lisp, general/largest_number/common_lisp, general/sum_list/common_lisp]
         language: [lisp, shell]
     steps:
       - name: Download Earthly v0.8.12.
@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        directory: [factorial/common_lisp, fibonacci/common_lisp, largest_number/common_lisp, sum_list/common_lisp]
+        directory: [general/factorial/common_lisp, general/fibonacci/common_lisp, general/largest_number/common_lisp, general/sum_list/common_lisp]
         language: [shell]
     steps:
       - name: Download Earthly v0.8.12.
