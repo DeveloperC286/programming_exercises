@@ -1,5 +1,7 @@
 # Programming Exercises
-[![Pipeline Status](https://gitlab.com/DeveloperC/programming_exercises/badges/master/pipeline.svg)](https://gitlab.com/DeveloperC/programming_exercises/-/pipelines)
+[![Haskell Continuous Integration (CI)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/haskell-continuous-integration.yml/badge.svg)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/haskell-continuous-integration.yml)
+[![Rust Continuous Integration (CI)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/rust-continuous-integration.yml/badge.svg)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/rust-continuous-integration.yml)
+[![Lisp Continuous Integration (CI)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/lisp-continuous-integration.yml/badge.svg)](https://github.com/DeveloperC286/programming_exercises/actions/workflows/lisp-continuous-integration.yml)
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![License](https://img.shields.io/badge/License-AGPLv3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
 
