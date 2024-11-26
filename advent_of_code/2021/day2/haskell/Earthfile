@@ -13,7 +13,7 @@ COPY_SOURCECODE:
 
 
 haskell-base:
-    FROM haskell:8.10.7
+    FROM haskell:8.10.7@sha256:5c365dc081a22550cb4ca62f99a574f8583e8405689aa6a9d89fb21fa13724e9
     RUN cabal update
 
 
@@ -29,7 +29,7 @@ check-haskell-formatting:
 
 
 golang-base:
-    FROM golang:1.22.1
+    FROM golang:1.22.1@sha256:0b55ab82ac2a54a6f8f85ec8b943b9e470c39e32c109b766bbc1b801f3fa8d3b
 
 
 shell-formatting-base:
@@ -74,7 +74,7 @@ check-haskell-linting:
 
 
 ubuntu-base:
-    FROM ubuntu:22.04
+    FROM ubuntu:22.04@sha256:0e5e4a57c2499249aafc3b40fcd541e9a456aab7296681a3994d631587203f97
     # https://askubuntu.com/questions/462690/what-does-apt-get-fix-missing-do-and-when-is-it-useful
     RUN apt-get update --fix-missing
 
