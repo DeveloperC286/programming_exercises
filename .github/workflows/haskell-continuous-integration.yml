@@ -15,7 +15,7 @@ jobs:
         directory: [advent_of_code/2021/day1/haskell, advent_of_code/2021/day2/haskell]
         language: [haskell, shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -31,7 +31,7 @@ jobs:
         directory: [advent_of_code/2021/day1/haskell, advent_of_code/2021/day2/haskell]
         language: [haskell, shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -46,7 +46,7 @@ jobs:
       matrix:
         directory: [advent_of_code/2021/day1/haskell, advent_of_code/2021/day2/haskell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -61,7 +61,7 @@ jobs:
       matrix:
         directory: [advent_of_code/2021/day1/haskell, advent_of_code/2021/day2/haskell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15

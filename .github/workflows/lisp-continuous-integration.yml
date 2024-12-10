@@ -15,7 +15,7 @@ jobs:
         directory: [general/factorial/common_lisp, general/fibonacci/common_lisp, general/largest_number/common_lisp, general/sum_list/common_lisp]
         language: [lisp, shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
@@ -31,7 +31,7 @@ jobs:
         directory: [general/factorial/common_lisp, general/fibonacci/common_lisp, general/largest_number/common_lisp, general/sum_list/common_lisp]
         language: [shell]
     steps:
-      - name: Download Earthly v0.8.12.
+      - name: Download Earthly.
         uses: earthly/actions-setup@v1
         with:
           version: v0.8.15
