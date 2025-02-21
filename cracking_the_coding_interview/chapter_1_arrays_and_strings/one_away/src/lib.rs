@@ -40,17 +40,17 @@ pub fn one_away(from: String, to: String) -> bool {
 
 fn sort_strings(string1: String, string2: String) -> (i32, Vec<char>, Vec<char>) {
     if string1.chars().count() > string2.chars().count() {
-        return (
+        (
             (string1.chars().count() - string2.chars().count()) as i32,
             string1.chars().collect(),
             string2.chars().collect(),
-        );
+        )
     } else {
-        return (
+        (
             (string2.chars().count() - string1.chars().count()) as i32,
             string2.chars().collect(),
             string1.chars().collect(),
-        );
+        )
     }
 }
 

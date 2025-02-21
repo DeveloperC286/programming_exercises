@@ -64,10 +64,7 @@ pub fn min_window(searching: String, searching_for: String) -> String {
         }
     }
 
-    match smallest_substring_optional {
-        Some(smallest_substring) => smallest_substring,
-        None => String::new(),
-    }
+    smallest_substring_optional.unwrap_or_default()
 }
 
 fn contains_any_order(

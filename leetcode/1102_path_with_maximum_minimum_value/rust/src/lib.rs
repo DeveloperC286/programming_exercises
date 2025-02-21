@@ -12,9 +12,7 @@ pub fn maximum_minimum_path(grid: Vec<Vec<i32>>) -> i32 {
         (0..width).map(|x| grid[height][x]).min().unwrap(),
     );
 
-    while !to_search.is_empty() {
-        let (point, current_maximum_minimum_path, mut visited) = to_search.pop().unwrap();
-
+    while let Some((point, current_maximum_minimum_path, mut visited)) = to_search.pop() {
         if !visited.contains(&point) {
             visited.insert(point);
             let (y, x) = point;

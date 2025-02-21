@@ -1,5 +1,3 @@
-use std::i32::{MAX, MIN};
-
 pub fn reverse(mut reversing: i32) -> i32 {
     let mut reversed = 0;
 
@@ -8,10 +6,10 @@ pub fn reverse(mut reversing: i32) -> i32 {
         reversing /= 10;
 
         // Overflow detection.
-        if reversed > MAX / 10 || (reversed == MAX / 10 && next_digit > 7) {
+        if reversed > i32::MAX / 10 || (reversed == i32::MAX / 10 && next_digit > 7) {
             return 0;
         }
-        if reversed < MIN / 10 || (reversed == MIN / 10 && next_digit < -8) {
+        if reversed < i32::MIN / 10 || (reversed == i32::MIN / 10 && next_digit < -8) {
             return 0;
         }
 

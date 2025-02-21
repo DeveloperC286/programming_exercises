@@ -1,4 +1,4 @@
-pub fn game_of_life(board: &mut Vec<Vec<i32>>) {
+pub fn game_of_life(board: &mut [Vec<i32>]) {
     let height = board.len();
     let width = board[0].len();
 
