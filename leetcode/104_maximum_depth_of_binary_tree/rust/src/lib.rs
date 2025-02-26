@@ -15,8 +15,7 @@ pub fn max_depth(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
         // Initial root node is at depth 1.
         let mut to_search: Vec<(Rc<RefCell<TreeNode>>, i32)> = vec![(root_node, 1)];
 
-        while !to_search.is_empty() {
-            let (node_searching_rc, depth) = to_search.pop().unwrap();
+        while let Some((node_searching_rc, depth)) = to_search.pop() {
             let node_searching = node_searching_rc.borrow();
 
             if node_searching.left.is_none() && node_searching.right.is_none() {

@@ -24,7 +24,7 @@ pub fn urlify(urlifing: String, length: i32) -> String {
         start_word -= 1;
     }
 
-    return url.iter().collect();
+    url.iter().collect()
 }
 
 #[cfg(test)]
