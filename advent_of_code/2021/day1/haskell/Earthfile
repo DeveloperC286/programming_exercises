@@ -13,7 +13,7 @@ COPY_SOURCECODE:
 
 
 haskell-base:
-    FROM haskell:9.12.2@sha256:5df1782c43fe04b65af597e9eb40dfea25d191dad4237e45a13e6933956ec675
+    FROM haskell:9.12.2@sha256:fa33446b4a9b1319593dd7f809cc63426034690d72614945b1a4cb2209df660f
     RUN cabal update
 
 
