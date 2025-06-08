@@ -14,7 +14,7 @@ rstest = "=0.25.0"
 
 # For property-based testing.
 proptest = "=1.7.0"
-rand = "=0.8.4"
+rand = "=0.9.1"
 
 
 [profile.release]
