@@ -1,5 +1,5 @@
-use rstest::rstest;
 use rand::Rng;
+use rstest::rstest;
 
 use super::*;
 
