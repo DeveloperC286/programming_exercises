@@ -1,3 +1,4 @@
+use rand::Rng;
 use rstest::rstest;
 
 use super::*;
@@ -30,12 +31,13 @@ proptest! {
         prop_assume!(!string.is_empty());
         //Clone string and replace a random char to create a non permutation.
         let mut different_string_chars :Vec<char>= string.chars().collect();
-        let  different_string_char_index = rand::random::<usize>() % different_string_chars.len();
+        let mut rng = rand::thread_rng();
+        let different_string_char_index = rng.gen_range(0..different_string_chars.len());
 
         //Generate a char not equal to the one replacing.
-        let mut random_char = rand::random::<char>();
+        let mut random_char = rng.gen::<char>();
         while random_char == *different_string_chars.get(different_string_char_index).unwrap() {
-             random_char = rand::random::<char>();
+             random_char = rng.gen::<char>();
         }
 
         let _ = std::mem::replace(&mut different_string_chars[different_string_char_index], random_char);
