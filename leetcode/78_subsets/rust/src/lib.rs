@@ -7,7 +7,7 @@ pub fn subsets(generating_from: Vec<i32>) -> Vec<Vec<i32>> {
     let mut subsets = HashSet::new();
 
     for i in 0..upper_bound {
-        let binary_string = format!("{:0desired_length$b}", i, desired_length = desired_length);
+        let binary_string = format!("{i:0desired_length$b}");
         let mut set = vec![];
 
         for (index, binary_char) in binary_string.chars().enumerate() {

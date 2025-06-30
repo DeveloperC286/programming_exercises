@@ -12,14 +12,12 @@ pub fn generate_parenthesis(n: i32) -> Vec<String> {
     let mut permutations = HashSet::new();
 
     for child_permutation in generate_parenthesis(n - 1) {
-        permutations.insert(format!("({})", child_permutation));
+        permutations.insert(format!("({child_permutation})"));
 
         for inserting_at in 0..child_permutation.len() {
-            permutations.insert(format!(
-                "{}(){}",
-                &child_permutation[0..inserting_at],
-                &child_permutation[inserting_at..child_permutation.len()],
-            ));
+            let before = &child_permutation[0..inserting_at];
+            let after = &child_permutation[inserting_at..child_permutation.len()];
+            permutations.insert(format!("{before}(){after}"));
         }
     }
 
