@@ -1,33 +1,44 @@
-# So new files are owned by the user.
+DOCKER_RUN_OPTS := --rm -v $(PWD):/workspace -w /workspace
+
 UID := $(shell id -u)
 GID := $(shell id -g)
+DOCKER_RUN_WRITE_OPTS := $(DOCKER_RUN_OPTS) -u $(UID):$(GID)
 
-.PHONY: check-haskell-formatting check-shell-formatting fix-haskell-formatting fix-shell-formatting check-haskell-linting compile unit-test
+.PHONY: default
+default: compile
 
+.PHONY: check-haskell-formatting
 check-haskell-formatting:
 	docker build -t check-haskell-formatting -f ci/check-haskell-formatting.Dockerfile .
-	docker run --rm -v $(PWD):/workspace check-haskell-formatting
+	docker run $(DOCKER_RUN_OPTS) check-haskell-formatting
 
+# renovate: depName=mvdan/shfmt
+SHFMT_VERSION=v3.11.0-alpine@sha256:394d755b6007056a2e6d7537ccdbdcfca01b9855ba91e99df0166ca039c9d422
+
+.PHONY: check-shell-formatting
 check-shell-formatting:
-	docker pull mvdan/shfmt:v3.11.0-alpine
-	docker run --rm -v $(PWD):/workspace -w /workspace mvdan/shfmt:v3.11.0-alpine --simplify --diff ci/* 
+	docker run $(DOCKER_RUN_OPTS) mvdan/shfmt:$(SHFMT_VERSION) --simplify --diff ci/* 
 
+.PHONY: fix-haskell-formatting
 fix-haskell-formatting:
 	docker build -t fix-haskell-formatting -f ci/fix-haskell-formatting.Dockerfile .
-	docker run --rm -v $(PWD):/workspace -u $(UID):$(GID) fix-haskell-formatting
+	docker run $(DOCKER_RUN_WRITE_OPTS) fix-haskell-formatting
 
+.PHONY: fix-shell-formatting
 fix-shell-formatting:
-	docker pull mvdan/shfmt:v3.11.0-alpine
-	docker run --rm -v $(PWD):/workspace -w /workspace -u $(UID):$(GID) mvdan/shfmt:v3.11.0-alpine --simplify --write ci/* 
+	docker run $(DOCKER_RUN_WRITE_OPTS) mvdan/shfmt:$(SHFMT_VERSION) --simplify --write ci/* 
 
+.PHONY: check-haskell-linting
 check-haskell-linting:
 	docker build -t check-haskell-linting -f ci/check-haskell-linting.Dockerfile .
-	docker run --rm -v $(PWD):/workspace check-haskell-linting
+	docker run $(DOCKER_RUN_OPTS) check-haskell-linting
 
+.PHONY: compile
 compile:
 	docker build -t compile -f ci/compile.Dockerfile .
-	docker run --rm -v $(PWD):/workspace -u $(UID):$(GID) compile
+	docker run $(DOCKER_RUN_WRITE_OPTS) compile
 
+.PHONY: unit-test
 unit-test:
 	docker build -t unit-test -f ci/unit-test.Dockerfile .
-	docker run --rm -v $(PWD):/workspace unit-test
+	docker run $(DOCKER_RUN_OPTS) unit-test
