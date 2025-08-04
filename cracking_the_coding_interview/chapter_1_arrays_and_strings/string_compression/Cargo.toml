@@ -10,7 +10,7 @@ edition = "2021"
 
 [dev-dependencies]
 # For parameterized testing.
-rstest = "=0.25.0"
+rstest = "=0.26.1"
 
 
 [profile.release]
