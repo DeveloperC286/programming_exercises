@@ -7,7 +7,7 @@ edition = "2021"
 
 [dependencies]
 # For matrix math/structs.
-nalgebra = "0.33.0"
+nalgebra = "0.34.0"
 
 
 [dev-dependencies]
