@@ -1,4 +1,4 @@
-FROM haskell:9.12.2@sha256:df562727e3f19881e3aa6476bd5dc673de8dd39ece031c7855668f4976b29e91
+FROM haskell:9.12.2@sha256:6ee35d05b3df154b38c0ebac2f7c948c41f47a39260da2236080db2c1df6ee83
 
 WORKDIR /workspace
 
