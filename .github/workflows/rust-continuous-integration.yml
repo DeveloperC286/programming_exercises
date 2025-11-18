@@ -15,7 +15,7 @@ jobs:
         language: [rust, shell]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Check formatting.
         run: cd "${{ matrix.directory}}" && make check-${{ matrix.language }}-formatting
   linting:
@@ -27,7 +27,7 @@ jobs:
         language: [rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Check linting.
         run: cd "${{ matrix.directory}}" && make check-${{ matrix.language }}-linting
   compile:
@@ -38,7 +38,7 @@ jobs:
         directory: [general/largest_number/rust, cracking_the_coding_interview/chapter_1_arrays_and_strings/string_rotation, cracking_the_coding_interview/chapter_1_arrays_and_strings/one_away, cracking_the_coding_interview/chapter_1_arrays_and_strings/string_compression, cracking_the_coding_interview/chapter_1_arrays_and_strings/urlify, cracking_the_coding_interview/chapter_1_arrays_and_strings/is_unique, cracking_the_coding_interview/chapter_1_arrays_and_strings/palindrome_permutation, cracking_the_coding_interview/chapter_1_arrays_and_strings/check_permutation, cracking_the_coding_interview/chapter_1_arrays_and_strings/rotate_matrix, cracking_the_coding_interview/chapter_1_arrays_and_strings/zero_matrix, leetcode/104_maximum_depth_of_binary_tree/rust, leetcode/1431_kids_with_the_greatest_number_of_candies/rust, leetcode/206_reverse_linked_list/rust, leetcode/90_subsets_ii/rust, leetcode/819_most_common_word/rust, leetcode/226_invert_binary_tree/rust, leetcode/7_reverse_integer/rust, leetcode/165_compare_version_numbers/rust, leetcode/700_search_in_a_binary_search_tree/rust, leetcode/238_product_of_array_except_self/rust, leetcode/1429_first_unique_number/rust, leetcode/22_generate_parentheses/rust, leetcode/139_word_break/rust, leetcode/1102_path_with_maximum_minimum_value/rust, leetcode/98_validate_binary_search_tree/rust, leetcode/289_game_of_life/rust, leetcode/1091_shortest_path_in_binary_matrix/rust, leetcode/387_first_unique_character_in_a_string/rust, leetcode/1382_balance_a_binary_search_tree/rust, leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust, leetcode/543_diameter_of_binary_tree/rust, leetcode/88_merge_sorted_array/rust, leetcode/701_insert_into_a_binary_search_tree/rust, leetcode/78_subsets/rust, leetcode/76_minimum_window_substring/rust, leetcode/50_pow/rust, leetcode/46_permutations/rust, leetcode/1197_minimum_knight_moves/rust, leetcode/111_minimum_depth_of_binary_tree/rust, leetcode/1299_replace_elements_with_greatest_element_on_right_side/rust, leetcode/200_number_of_islands/rust, leetcode/47_permutation_ii/rust, leetcode/1373_maximum_sum_bst_in_binary_tree/rust, leetcode/20_valid_parentheses/rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Compile.
         run: cd "${{ matrix.directory}}" && make compile
   unit-test:
@@ -49,6 +49,6 @@ jobs:
         directory: [general/largest_number/rust, cracking_the_coding_interview/chapter_1_arrays_and_strings/string_rotation, cracking_the_coding_interview/chapter_1_arrays_and_strings/one_away, cracking_the_coding_interview/chapter_1_arrays_and_strings/string_compression, cracking_the_coding_interview/chapter_1_arrays_and_strings/urlify, cracking_the_coding_interview/chapter_1_arrays_and_strings/is_unique, cracking_the_coding_interview/chapter_1_arrays_and_strings/palindrome_permutation, cracking_the_coding_interview/chapter_1_arrays_and_strings/check_permutation, cracking_the_coding_interview/chapter_1_arrays_and_strings/rotate_matrix, cracking_the_coding_interview/chapter_1_arrays_and_strings/zero_matrix, leetcode/104_maximum_depth_of_binary_tree/rust, leetcode/1431_kids_with_the_greatest_number_of_candies/rust, leetcode/206_reverse_linked_list/rust, leetcode/90_subsets_ii/rust, leetcode/819_most_common_word/rust, leetcode/226_invert_binary_tree/rust, leetcode/7_reverse_integer/rust, leetcode/165_compare_version_numbers/rust, leetcode/700_search_in_a_binary_search_tree/rust, leetcode/238_product_of_array_except_self/rust, leetcode/1429_first_unique_number/rust, leetcode/22_generate_parentheses/rust, leetcode/139_word_break/rust, leetcode/1102_path_with_maximum_minimum_value/rust, leetcode/98_validate_binary_search_tree/rust, leetcode/289_game_of_life/rust, leetcode/1091_shortest_path_in_binary_matrix/rust, leetcode/387_first_unique_character_in_a_string/rust, leetcode/1382_balance_a_binary_search_tree/rust, leetcode/1351_count_negative_numbers_in_a_sorted_matrix/rust, leetcode/543_diameter_of_binary_tree/rust, leetcode/88_merge_sorted_array/rust, leetcode/701_insert_into_a_binary_search_tree/rust, leetcode/78_subsets/rust, leetcode/76_minimum_window_substring/rust, leetcode/50_pow/rust, leetcode/46_permutations/rust, leetcode/1197_minimum_knight_moves/rust, leetcode/111_minimum_depth_of_binary_tree/rust, leetcode/1299_replace_elements_with_greatest_element_on_right_side/rust, leetcode/200_number_of_islands/rust, leetcode/47_permutation_ii/rust, leetcode/1373_maximum_sum_bst_in_binary_tree/rust, leetcode/20_valid_parentheses/rust]
     steps:
       - name: Checkout code.
-        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        uses: actions/checkout@93cb6efe18208431cddfb8368fd83d5badbf9bfd # v5.0.1
       - name: Unit test.
         run: cd "${{ matrix.directory}}" && make unit-test
