@@ -9,7 +9,7 @@ default:
 	echo "No default target."
 
 # renovate: depName=clfoundation/sbcl
-SBCL_VERSION=2.2.4@sha256:92b104e15870c8d9cd1b0b075e9f9143f10a1c8e4375032fceba291aca2fa0df
+SBCL_VERSION=2.5.10@sha256:6dd10467895dd90c99d7a0cbef05d178d632811651ad39e168936bda3410da8e
 
 .PHONY: check-common-lisp-formatting
 check-common-lisp-formatting:
