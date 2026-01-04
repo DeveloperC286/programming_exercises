@@ -15,8 +15,10 @@ check-haskell-linting:
 
 .PHONY: compile
 compile:
-	cabal build
+	cabal update
+	cabal build --enable-tests
 
 .PHONY: unit-test
 unit-test:
-	cabal test
+	cabal update
+	cabal test --enable-tests
