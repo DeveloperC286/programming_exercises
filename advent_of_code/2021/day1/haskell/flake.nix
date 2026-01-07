@@ -14,13 +14,13 @@
       {
         devShells.default = pkgs.mkShell {
           buildInputs = [
-            # Glasgow Haskell Compiler and Cabal
-            pkgs.ghc
-            pkgs.cabal-install
             # Haskell formatter
             pkgs.ormolu
             # Haskell linter
             pkgs.hlint
+            # Glasgow Haskell Compiler and Cabal
+            pkgs.ghc
+            pkgs.cabal-install
           ];
         };
       }
