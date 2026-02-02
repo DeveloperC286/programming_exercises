@@ -10,4 +10,4 @@ edition = "2021"
 
 [dev-dependencies]
 # For snapshot testing.
-insta = "=1.46.2"
+insta = "=1.46.3"
