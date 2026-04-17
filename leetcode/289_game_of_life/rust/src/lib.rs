@@ -12,22 +12,15 @@ pub fn game_of_life(board: &mut [Vec<i32>]) {
         .collect();
 
     // Make all the changes
-    (0..height).for_each(|y| {
-        (0..width).for_each(|x| match board[y][x] {
-            0 => {
-                if boards_number_of_neighbors[y][x] == 3 {
-                    board[y][x] = 1;
-                }
-            }
-            1 => match boards_number_of_neighbors[y][x] {
-                2 | 3 => {}
-                _ => {
-                    board[y][x] = 0;
-                }
-            },
-            _ => {}
-        })
-    });
+    for y in 0..height {
+        for x in 0..width {
+            let n = boards_number_of_neighbors[y][x];
+            board[y][x] = match (board[y][x], n) {
+                (1, 2 | 3) | (0, 3) => 1,
+                _ => 0,
+            };
+        }
+    }
 }
 
 fn get_number_of_neighbors(
