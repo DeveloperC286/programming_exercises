@@ -20,16 +20,16 @@ fn validate_node(
     if let Some(checking) = node {
         let inner_checking = checking.borrow();
 
-        if let Some(lower_bound) = lower_bound {
-            if inner_checking.val <= lower_bound {
-                return false;
-            }
+        if let Some(lower_bound) = lower_bound
+            && inner_checking.val <= lower_bound
+        {
+            return false;
         }
 
-        if let Some(upper_bound) = upper_bound {
-            if inner_checking.val >= upper_bound {
-                return false;
-            }
+        if let Some(upper_bound) = upper_bound
+            && inner_checking.val >= upper_bound
+        {
+            return false;
         }
 
         return validate_node(
