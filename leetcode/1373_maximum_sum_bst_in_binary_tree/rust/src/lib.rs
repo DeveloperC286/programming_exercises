@@ -71,16 +71,16 @@ fn is_binary_search_tree(
     if let Some(node_rc) = node {
         let node = node_rc.borrow();
 
-        if let Some(upper_bound_value) = upper_bound {
-            if node.val >= upper_bound_value {
-                return false;
-            }
+        if let Some(upper_bound_value) = upper_bound
+            && node.val >= upper_bound_value
+        {
+            return false;
         }
 
-        if let Some(lower_bound_value) = lower_bound {
-            if node.val <= lower_bound_value {
-                return false;
-            }
+        if let Some(lower_bound_value) = lower_bound
+            && node.val <= lower_bound_value
+        {
+            return false;
         }
 
         return is_binary_search_tree(node.left.clone(), lower_bound, Some(node.val))

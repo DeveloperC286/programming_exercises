@@ -56,10 +56,10 @@ pub fn min_window(searching: String, searching_for: String) -> String {
         } else {
             right_pointer += 1;
 
-            if let Some(right_pointer_char) = searching.chars().nth(right_pointer - 1) {
-                if searching_for_chars.contains(&right_pointer_char) {
-                    *searching_char_counts.entry(right_pointer_char).or_insert(0) += 1;
-                }
+            if let Some(right_pointer_char) = searching.chars().nth(right_pointer - 1)
+                && searching_for_chars.contains(&right_pointer_char)
+            {
+                *searching_char_counts.entry(right_pointer_char).or_insert(0) += 1;
             }
         }
     }
