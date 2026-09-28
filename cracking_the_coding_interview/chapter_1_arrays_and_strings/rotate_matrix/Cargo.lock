@@ -93,9 +93,9 @@ checksum = "f70749695b063ecbf6b62949ccccde2e733ec3ecbbd71d467dca4e5c6c97cca0"
 
 [[package]]
 name = "glam"
-version = "0.33.8"
+version = "0.33.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "a0990707078259d76f65619a692e87c82645be66cbee224173cd1af151e54ba2"
+checksum = "35b4e837a1d133645d1dcf283e146a4b9901e390a1c13545f959cfed3a72f24f"
 
 [[package]]
 name = "glob"
@@ -145,7 +145,7 @@ dependencies = [
  "glam 0.30.10",
  "glam 0.31.1",
  "glam 0.32.1",
- "glam 0.33.8",
+ "glam 0.33.11",
  "matrixmultiply",
  "nalgebra-macros",
  "num-complex",
